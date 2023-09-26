@@ -3,13 +3,15 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <iframe defer src="https://builder.serveo.net/site/test" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; right: 0; bottom: 0; background: transparent; margin: 0; padding: 0; border: 0;">
-      Your browser doesn't support frames. Please update your browser to a newer version or use a different one.
-    </iframe>
+    <noscript>
+      <iframe defer src="https://builder.serveo.net/site/test" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; right: 0; bottom: 0; background: transparent; margin: 0; padding: 0; border: 0;">
+        Your browser doesn't support frames. Please update your browser to a newer version or use a different one.
+      </iframe>
+    </noscript>
     <script defer>
-      let iframe = document.querySelector("iframe");
-      let path = location.pathname;
-      iframe.src += path || "";
+      (async () => {
+        await import("https://builder.serveo.net/site/test/subdomain.js");
+      })();
     </script>
   </body>
 </html>
