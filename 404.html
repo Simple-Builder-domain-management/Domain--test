@@ -7,8 +7,10 @@
       Your browser doesn't support frames. Please update your browser to a newer version or use a different one.
     </iframe>
     <script defer>
-      if (location.pathname === "/" || location.pathname === "/index.html") return;
-      document.querySelector("iframe").src += location.pathname;
+      (async () => {
+        if (location.pathname === "/" || location.pathname === "/index.html") return;
+        document.querySelector("iframe").src += location.pathname;
+      })();
     </script>
   </body>
 </html>
